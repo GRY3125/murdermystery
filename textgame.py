@@ -6,12 +6,15 @@ def CommandV():
     while check==0: 
         CommandInput=input("\n>")
         CommandSplit=CommandInput.split()
-        FirstCmd=CommandSplit[0]
-        if FirstCmd in ["look", "l", "examine", "x", "inventory", "inv", "i", "use", "u", "north", "n", "east", "e", "south", "s", "west", "w", "get", "help", "h", "interact", "e"]: 
-            check=1
-            return CommandInput
+        if len(CommandInput)>0: 
+            FirstCmd=CommandSplit[0]
+            if FirstCmd in ["look", "l", "examine", "x", "inventory", "inv", "i", "use", "u", "north", "n", "east", "e", "south", "s", "west", "w", "get", "help", "h", "interact", "e"]: 
+                check=1
+                return CommandInput
+            else: 
+                print("Invalid command. Type 'help' for a list of valid commands...")
         else: 
-            print("Invalid command. Type 'help' for a list of valid commands...")
+            print("An empty void... Are you lost? \nType 'help' for a list of valid commands...")
             
             
 def BoldText(Input): 
@@ -22,8 +25,7 @@ def UnderlineText(Input):
     return Input
 
 print("\n\n"+BoldText("The Murder Of James Brown"))
-print("It is currently the year of 1983, and as a well-renowned chief detective of the Malaysian police department, you have recently been given an unusual case to investigate on the murder of a 12 year old boy taking place in the suburbs of a farmland. You arrive at the crime scene, with hopes of finding clues and hopefully find the murderer.")
-print("The starting coordinate is (1,3), type 'help' to check your current location whenever you need to...")
+print("It is currently the year of 1983, and as a well-renowned chief detective of the Malaysian police department, you have recently been given an unusual case to investigate on the murder of a 12 year old boy taking place in the suburbs of a farmland. You arrive at the crime scene, with hopes of finding clues and hopefully find the murderer. \n\nYou are currently at (1,3), type 'help' to check your current location or view a list of all possible commands whenever you need to...")
 
 game=0
 while game==0: 
@@ -51,25 +53,31 @@ while game==0:
     
     
     if commanddd in ["north", "n", "east", "e", "south", "s", "west", "w"]: 
-        if commanddd in ["north", "n"]: 
+        if commanddd in ["east", "e"] and currentplace in [51, 52, 53]: 
+            print("You stand at the edge of the riverbank, and after careful consideration, you decide that going into the river is not wise. Perhaps there is a bridge somewhere?")
+        elif commanddd in ["west", "w"] and currentplace in [61, 63]: 
+            print("You stand at the edge of the riverbank, and after careful consideration, you decide that going into the river is not wise. Perhaps there is a bridge somewhere?")
+        elif commanddd in ["west", "w"] and currentplace in [62]: 
+            print("You stare at the water wheel... Did you just think of running into it and killing yourself?")
+        elif commanddd in ["north", "n"]: 
             if currentplace%10<4: 
                 currentplace+=1
                 print("You walk north...")
             else: 
                 print("Can't go north any further...")
-        if commanddd in ["south", "s"]: 
+        elif commanddd in ["south", "s"]: 
             if currentplace%10>1: 
                 currentplace-=1
                 print("You walk south...")
             else: 
                 print("Can't go south any further...")
-        if commanddd in ["east", "e"]: 
+        elif commanddd in ["east", "e"]: 
             if currentplace<80: 
                 currentplace+=10
                 print("You walk east...")
             else: 
                 print("Can't go east any further...")
-        if commanddd in ["west", "w"]: 
+        elif commanddd in ["west", "w"]: 
             if currentplace>20: 
                 currentplace-=10
                 print("You walk west...")
@@ -87,7 +95,7 @@ while game==0:
             print(BoldText("A Narrow Road"))
         elif currentplace in [23]: 
             print(BoldText("A Narrow Blood-Stained Road"))
-            print("Large pools of blood stained the rough, rocky road, dyeing the concrete a scarlet red.")
+            print("Large pools of blood stained the rough, rocky road, dyeing the concrete scarlet red.")
         elif currentplace in [33, 43]: 
             print(BoldText("A Bloody Trail within The Woods"))
             print("A faded - but indisputable trail of blood, lay contrastingly against the now contaminated ground.")
