@@ -36,8 +36,8 @@ print("It is currently the year of 1983, and as a well-renowned chief detective 
 game=0
 while game==0: 
     commandinput=CommandV() 
-    commanddd=commandinput.split()
-    commanddd=commanddd[0]
+    commandl=commandinput.split()
+    commanddd=commandl[0]
     # commandinput = entire input from user
     # commanddd = first command / cmd category
     
@@ -94,7 +94,7 @@ while game==0:
     if commanddd in ["look", "l"]: 
         if currentplace in [11, 12, 14, 31, 32, 34, 41, 42, 44, 73, 74, 83]: 
             print(BoldText("The Woods"))
-            print("Towering trees surround you depriving any entry of light, trembling against the harsh wind, casting shadows in an engulfing abyss...")
+            print("Towering "+UnderlineText("trees")+" surround you depriving any entry of light, trembling against the harsh wind, casting "+UnderlineText("shadows")+" in an engulfing abyss...")
         elif currentplace in [13]: 
             print(BoldText("A Crashed Car"))
         elif currentplace in [21, 22, 24]: 
@@ -119,3 +119,14 @@ while game==0:
             print(BoldText("A Half-Empty Horse Stable"))
     
     
+    
+    if commanddd in ["examine", "x"]: 
+        item=commandl[1]
+        if currentplace in [11, 12, 14, 31, 32, 34, 41, 42, 44, 73, 74, 83]: 
+            if item in ["trees", "shadows"]: 
+                if item=="trees": 
+                    print("It's just a normal old tree, green leaves and all.")
+                elif item=="shadows": 
+                    print("Raven-black figures cover the floor...")
+            else: 
+                print("Invalid object...")
