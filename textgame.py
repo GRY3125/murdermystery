@@ -80,15 +80,17 @@ while game==0:
     if commanddd in ["look", "l"]: 
         if currentplace in [11, 12, 14, 31, 32, 34, 41, 42, 44, 73, 74, 83]: 
             print(BoldText("The Woods"))
-            print("Towering trees surround you depriving any entry of light, trembling against the harsh wind, casting shadows in an engulfing abyss.")
+            print("Towering trees surround you depriving any entry of light, trembling against the harsh wind, casting shadows in an engulfing abyss...")
         elif currentplace in [13]: 
             print(BoldText("A Crashed Car"))
         elif currentplace in [21, 22, 24]: 
             print(BoldText("A Narrow Road"))
         elif currentplace in [23]: 
             print(BoldText("A Narrow Blood-Stained Road"))
+            print("Large pools of blood stained the rough, rocky road, dyeing the concrete a scarlet red.")
         elif currentplace in [33, 43]: 
             print(BoldText("A Bloody Trail within The Woods"))
+            print("A faded - but indisputable trail of blood, lay contrastingly against the now contaminated ground.")
         elif currentplace in [51, 52, 53, 61, 63]: 
             print(BoldText("The River"))
         elif currentplace in [62]: 
