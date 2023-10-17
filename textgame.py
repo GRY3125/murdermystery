@@ -24,10 +24,14 @@ while game==0:
     # commandinput = entire input from user
     # commanddd = first command / cmd category
 
+
+
     if commanddd in ["inventory", "inv", "i"]: 
         print(*inventorylist)
         if commanddd!=commandinput: 
             print("Everything behind "+commanddd+" is ignored...")
+    
+    
     
     if commanddd in ["north", "n", "east", "e", "south", "s", "west", "w"]: 
         if commanddd in ["north", "n"]: 
@@ -40,4 +44,14 @@ while game==0:
                 currentplace-=1
             else: 
                 print("Can't go south any further...")
+        if commanddd in ["east", "e"]: 
+            if currentplace<80: 
+                currentplace+=10
+            else: 
+                print("Can't go east any further...")
+        if commanddd in ["west", "w"]: 
+            if currentplace>20: 
+                currentplace-=10
+            else: 
+                print("Can't go west any further...")
         print(currentplace)
