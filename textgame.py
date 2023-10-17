@@ -15,6 +15,12 @@ def CommandV():
                 print("Invalid command. Type 'help' for a list of valid commands...")
         else: 
             print("An empty void... Are you lost? \nType 'help' for a list of valid commands...")
+    
+    # commands left to code:
+    # examine/x 
+    # use/u
+    # get
+    # interact/e
             
             
 def BoldText(Input): 
@@ -25,7 +31,7 @@ def UnderlineText(Input):
     return Input
 
 print("\n\n"+BoldText("The Murder Of James Brown"))
-print("It is currently the year of 1983, and as a well-renowned chief detective of the Malaysian police department, you have recently been given an unusual case to investigate on the murder of a 12 year old boy taking place in the suburbs of a farmland. You arrive at the crime scene, with hopes of finding clues and hopefully find the murderer. \n\nYou are currently at (1,3), type 'help' to check your current location or view a list of all possible commands whenever you need to...")
+print("It is currently the year of 1983, and as a well-renowned chief detective of the police department, you have recently been given an unusual case to investigate on the murder of a 12 year old boy taking place in the suburbs of a farmland. You arrive at the crime scene, with hopes of finding clues and hopefully find the murderer. \n\nYou are currently at (1,3), type 'help' to check your current location or view a list of all possible commands whenever you need to...")
 
 game=0
 while game==0: 
@@ -111,3 +117,5 @@ while game==0:
             print(BoldText("The Cozy Farmhouse"))
         elif currentplace in [84]: 
             print(BoldText("A Half-Empty Horse Stable"))
+    
+    
