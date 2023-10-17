@@ -1,4 +1,5 @@
 inventorylist=["apple"]
+currentplace=13
 
 def CommandV(): 
     check=0
@@ -28,5 +29,15 @@ while game==0:
         if commanddd!=commandinput: 
             print("Everything behind "+commanddd+" is ignored...")
     
-    # if commanddd in ["north", "n", "east", "e", "south", "s", "west", "w"]: 
-        #
+    if commanddd in ["north", "n", "east", "e", "south", "s", "west", "w"]: 
+        if commanddd in ["north", "n"]: 
+            if currentplace%10<4: 
+                currentplace+=1
+            else: 
+                print("Can't go north any further...")
+        if commanddd in ["south", "s"]: 
+            if currentplace%10>1: 
+                currentplace-=1
+            else: 
+                print("Can't go south any further...")
+        print(currentplace)
