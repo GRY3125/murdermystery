@@ -7,7 +7,7 @@ def CommandV():
         CommandInput=input("\n>")
         CommandSplit=CommandInput.split()
         FirstCmd=CommandSplit[0]
-        if FirstCmd in ["look", "l", "examine", "x", "inventory", "inv", "i", "use", "u", "north", "n", "east", "e", "south", "s", "west", "w", "get", "help", "h"]: 
+        if FirstCmd in ["look", "l", "examine", "x", "inventory", "inv", "i", "use", "u", "north", "n", "east", "e", "south", "s", "west", "w", "get", "help", "h", "interact", "e"]: 
             check=1
             return CommandInput
         else: 
@@ -21,8 +21,9 @@ def UnderlineText(Input):
     Input="\033[4m"+Input+"\033[0m"
     return Input
 
-print("- - - - - - - - - - - - -")
-print("........backstory")
+print("\n\n"+BoldText("The Murder Of James Brown"))
+print("It is currently the year of 1983, and as a well-renowned chief detective of the Malaysian police department, you have recently been given an unusual case to investigate on the murder of a 12 year old boy taking place in the suburbs of a farmland. You arrive at the crime scene, with hopes of finding clues and hopefully find the murderer.")
+print("The starting coordinate is (1,3), type 'help' to check your current location whenever you need to...")
 
 game=0
 while game==0: 
@@ -39,7 +40,7 @@ while game==0:
         print("Your current location is ("+str(xCoOrd)+", "+str(yCoOrd)+")...")
         print("\n'north'/'n': go north \n'east'/'e': go east \n'south'/'s': go south \n'west'/'w': go west")
         print("'look'/'l': look at your surroundings \n'examine'/'x': examine an object \n''inventory'/'inv'/'i': check your inventory")
-        print("'use'/'u': use an object \n'get': get an object")
+        print("'use'/'u': use an object \n'get': get an object \n'interact'/'e': interact with a character")
 
 
     if commanddd in ["inventory", "inv", "i"]: 
@@ -79,7 +80,7 @@ while game==0:
     if commanddd in ["look", "l"]: 
         if currentplace in [11, 12, 14, 31, 32, 34, 41, 42, 44, 73, 74, 83]: 
             print(BoldText("The Woods"))
-            print()
+            print("Towering trees surround you depriving any entry of light, trembling against the harsh wind, casting shadows in an engulfing abyss.")
         elif currentplace in [13]: 
             print(BoldText("A Crashed Car"))
         elif currentplace in [21, 22, 24]: 
