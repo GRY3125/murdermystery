@@ -1,5 +1,5 @@
 inventorylist=["apple"]
-currentplace=13
+currentplace=13 # xy = (x,y) coordinate
 
 def CommandV(): 
     check=0
@@ -12,6 +12,11 @@ def CommandV():
             return CommandInput
         else: 
             print("Invalid command. Type 'help' for a list of valid commands...")
+            
+            
+def BoldText(Input): 
+    Input="\033[1m"+Input+"\033[0m"
+    return Input
 
 print("- - - - - - - - - - - - -")
 print("........backstory")
@@ -37,21 +42,49 @@ while game==0:
         if commanddd in ["north", "n"]: 
             if currentplace%10<4: 
                 currentplace+=1
+                print("You walk north...")
             else: 
                 print("Can't go north any further...")
         if commanddd in ["south", "s"]: 
             if currentplace%10>1: 
                 currentplace-=1
+                print("You walk south...")
             else: 
                 print("Can't go south any further...")
         if commanddd in ["east", "e"]: 
             if currentplace<80: 
                 currentplace+=10
+                print("You walk east...")
             else: 
                 print("Can't go east any further...")
         if commanddd in ["west", "w"]: 
             if currentplace>20: 
                 currentplace-=10
+                print("You walk west...")
             else: 
                 print("Can't go west any further...")
-        print(currentplace)
+                
+        
+    if commanddd in ["look", "l"]: 
+        if currentplace in [11, 12, 14, 31, 32, 34, 41, 42, 44, 73, 74, 83]: 
+            print(BoldText("The Woods"))
+        elif currentplace in [13]: 
+            print(BoldText("A Crashed Car"))
+        elif currentplace in [21, 22, 24]: 
+            print(BoldText("A Narrow Road"))
+        elif currentplace in [23]: 
+            print(BoldText("A Narrow Blood-Stained Road"))
+        elif currentplace in [33, 43]: 
+            print(BoldText("A Bloody Trail within The Woods"))
+        elif currentplace in [51, 52, 53, 61, 63]: 
+            print(BoldText("The River"))
+        elif currentplace in [62]: 
+            print(BoldText("The Blood-Smeared Water Wheel"))
+        elif currentplace in [54, 64]: 
+            print(BoldText("A Fragile Bridge"))
+        elif currentplace in [71, 81]: 
+            print(BoldText("A Noisy Pig Pen"))
+        elif currentplace in [72, 82]: 
+            print(BoldText("The Cozy Farmhouse"))
+        elif currentplace in [84]: 
+            print(BoldText("A Half-Empty Horse Stable"))
