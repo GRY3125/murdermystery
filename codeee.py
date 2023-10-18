@@ -10,7 +10,7 @@ def CommandV():
         CommandSplit=CommandInput.split()
         if len(CommandInput)>0: 
             FirstCmd=CommandSplit[0]
-            if FirstCmd in ["look", "l", "examine", "x", "inventory", "inv", "i", "use", "u", "north", "n", "east", "e", "south", "s", "west", "w", "get", "help", "h", "interact", "e"]: 
+            if FirstCmd in ["look", "l", "examine", "x", "inventory", "inv", "i", "use", "u", "north", "n", "east", "e", "south", "s", "west", "w", "get", "help", "h", "interact", "t"]: 
                 check=1
                 return CommandInput
             else: 
@@ -52,7 +52,7 @@ while game==0:
         print("Your current location is ("+str(xCoOrd)+", "+str(yCoOrd)+")...")
         print("\n'north'/'n': go north \n'east'/'e': go east \n'south'/'s': go south \n'west'/'w': go west")
         print("'look'/'l': look at your surroundings \n'examine'/'x': examine an object \n''inventory'/'inv'/'i': check your inventory")
-        print("'use'/'u': use an object \n'get': get an object \n'interact'/'e': interact with a character")
+        print("'use'/'u': use an object \n'get': get an object \n'interact'/'t': interact with a character")
 
 
     if commanddd in ["inventory", "inv", "i"]: 
@@ -144,7 +144,7 @@ while game==0:
             else: 
                 print("Object not found...")
                 
-        if currentplace in [62]: 
+        elif currentplace in [62]: 
             if item in ["flesh"]: 
                 print("Stripped pieces of meat rotting away, producing an abominable smell of the dead, attracting a swarm of hungry flies.")
                 if fleshdiscovered==0: 
@@ -156,8 +156,24 @@ while game==0:
                 print("Object not found...")
         
         else: 
-            print("No object was given...")
+            print("Nothing to examine here.")
+            
+    elif commanddd in ["examine", "x"] and len(commandl)<2:
+        print("No object was given...")
         
+    
+    
+    if commanddd in ["use", "u"] and len(commandl)>1: 
+        item=commandl[1]
+        if item in inventorylist: 
+            if item=="apple": 
+                print("You take a bite into the scrumptious apple, and then place it back into your bag.")
+            elif item=="speculation": 
+                print("It must have been a dark night and chilly night, except darker than most and colder. The night held reign upon the world, watching - in its full, white roundness. The trees sway against the wind, imitating the living, feeding the eerie atmosphere. James Brown stood at the tip of the river, voice course from screaming, blood dripping down from the wounds he gained from the accident that just occurred. Looking into the abyssal woods with little to no light to support his vision, a silhouette of a person could be barely made out in the distance. Before he could comprehend the situation, he was pushed into the ravenous river. Being a farm boy all his life, no one had taught him to swim and so struggling to keep afloat, all he could do was to get carried away by the current. And down he went, until he was plunged into a wooden, circular structure, and left to be torn apart inescapably...")
+        else: 
+            print("Object is not in inventory...")
+    elif commanddd in ["use", "u"] and len(commandl)<2: 
+        print("No object was given...")
         
 
 
