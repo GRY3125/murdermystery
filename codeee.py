@@ -19,12 +19,9 @@ def CommandV():
             print("An empty void... Are you lost? \nType 'help' for a list of valid commands...")
     
     # commands left to code:
-    # examine/x 
-    # use/u
-    ### apple 
-    ### speculation
-    # get
-    # interact/e * add people too *
+    ### use/u
+    ### get?
+    ### interact/e + add people in x
             
             
 def BoldText(Input): 
@@ -46,6 +43,9 @@ while game==0:
     # commanddd = first command / cmd category
     
     
+    
+    
+    
     if  commanddd in ["help", "h"]: 
         xCoOrd=currentplace//10
         yCoOrd=currentplace%10
@@ -55,10 +55,15 @@ while game==0:
         print("'use'/'u': use an object \n'get': get an object \n'interact'/'t': interact with a character")
 
 
+
+
+
     if commanddd in ["inventory", "inv", "i"]: 
         print(*inventorylist,sep=", ")
         if commanddd!=commandinput: 
             print("Everything behind "+commanddd+" is ignored...")
+    
+    
     
     
     
@@ -95,6 +100,9 @@ while game==0:
                 print("Can't go west any further...")
                 
         
+        
+        
+        
     if commanddd in ["look", "l"]: 
         if currentplace in [11, 12, 14, 31, 32, 34, 41, 42, 44, 73, 74, 83]: 
             print(BoldText("The Woods"))
@@ -122,13 +130,15 @@ while game==0:
             print("A pile of wooden "+UnderlineText("planks")+", clumsily nailed together, form an unstable pathway from the roadside to the farmland.")
         elif currentplace in [71, 81]: 
             print(BoldText("A Noisy Pig Pen"))
-            print("The constant, never-ending noise of grunts and squeals rose from a self-built "+UnderlineText("pen")+", encapsulating over a dozen of fat, spoiled "+UnderlineText("pigs")+", lying lethargically in the mud.")
+            print("The constant, never-ending noise of grunts and squeals rose from a self-built pen, encapsulating over a dozen of fat, spoiled "+UnderlineText("pigs")+", lying lethargically in the mud.")
         elif currentplace in [72, 82]: 
             print(BoldText("The Cozy Farmhouse"))
             print("Although the abode is visibly not the most luxurious nor sanitary in comparison to those in the city, its simplicity has a comfortable, pleasant air, and is unquestionably more than adequate to house the farmer's family of four.")
         elif currentplace in [84]: 
             print(BoldText("A Half-Empty Horse Stable"))
             print("A large, rectangular, wooden structure stands firmly, sheathing a diversified variety of "+UnderlineText("horses")+".")
+    
+    
     
     
     
@@ -144,6 +154,36 @@ while game==0:
             else: 
                 print("Object not found...")
                 
+        elif currentplace in [13]: 
+            if item in ["car"]: 
+                print("A Toyota AE86, nothing out of the ordinary, just the regular, four wheel drive, you could spot anywhere on the road.")
+            else: 
+                print("Object not found...")
+                
+        elif currentplace in [23]: 
+            if item in ["blood"]: 
+                print("The easily distinguishable velvety-red of thick liquid, a symbol of injury and death.")
+            else: 
+                print("Object not found...")
+            
+        elif currentplace in [33, 43]: 
+            if item in ["trail"]: 
+                print("The droplets of blood form what seemed to be a continuous pathway - a trail, leading to someplace unknown.")
+            else: 
+                print("Object not found...")
+                
+        elif currentplace in [51, 52, 53, 61, 63]: 
+            if item in ["water"]: 
+                print("Unlike water sources back in the city, the water here is pure and refreshing, pure enough to be drunk straight from the river, as if it had been filtered since the start. You get a quiack glimpse of your reflection.")
+            else: 
+                print("Object not found...")
+        
+        elif currentplace in [54, 64]: 
+            if item in ["planks"]: 
+                print("Rectangular pieces of wood, likely to have been chopped and shaped from trees surrounding the land.")
+            else: 
+                print("Object not found...")
+
         elif currentplace in [62]: 
             if item in ["flesh"]: 
                 print("Stripped pieces of meat rotting away, producing an abominable smell of the dead, attracting a swarm of hungry flies.")
@@ -155,12 +195,26 @@ while game==0:
             else: 
                 print("Object not found...")
         
+        elif currentplace in [71, 81]: 
+            if item in ["pigs"]: 
+                print("Oink oink. OINK.")
+            else: 
+                print("Object not found...")
+                
+        elif currentplace in [84]: 
+            if item in ["horses"]: 
+                print("Large, muscular, creatures stood, head held high and peaking over the fence - in anticipation for grazing time.")
+            else: 
+                print("Object not found...")
+                
         else: 
             print("Nothing to examine here.")
             
     elif commanddd in ["examine", "x"] and len(commandl)<2:
         print("No object was given...")
         
+    
+    
     
     
     if commanddd in ["use", "u"] and len(commandl)>1: 
@@ -178,3 +232,4 @@ while game==0:
 
 
 
+print("\nBrought to you by Ru Ying, Camelia and Dora...")
