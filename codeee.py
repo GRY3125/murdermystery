@@ -19,7 +19,7 @@ def CommandV():
             print("An empty void... Are you lost? \nType 'help' for a list of valid commands...")
     
     # commands left to code:
-    ### use/u
+    ### use/u? 
     ### get?
     ### interact/e + add people in x
             
@@ -232,4 +232,4 @@ while game==0:
 
 
 
-print("\nBrought to you by Ru Ying, Camelia and Dora...")
+print("\nBrought to you by Ru Ying, Camelia and Dora... <3")
