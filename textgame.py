@@ -21,6 +21,7 @@ def CommandV():
     # use/u
     # get
     # interact/e
+    # look/l
             
             
 def BoldText(Input): 
@@ -97,26 +98,33 @@ while game==0:
             print("Towering "+UnderlineText("trees")+" surround you depriving any entry of light, trembling against the harsh wind, casting "+UnderlineText("shadows")+" in an engulfing abyss...")
         elif currentplace in [13]: 
             print(BoldText("A Crashed Car"))
+            print("A pungent smell of burning rises from the catastrophe - a barely recognisable car, jammed into the trunks of a rotting tree.")
         elif currentplace in [21, 22, 24]: 
             print(BoldText("A Narrow Road"))
         elif currentplace in [23]: 
             print(BoldText("A Narrow Blood-Stained Road"))
-            print("Large pools of blood stained the rough, rocky road, dyeing the concrete scarlet red.")
+            print("Large pools of blood stain the rough, rocky road, dyeing the concrete scarlet red.")
         elif currentplace in [33, 43]: 
             print(BoldText("A Bloody Trail within The Woods"))
             print("A faded - but indisputable trail of blood, lay contrastingly against the now contaminated ground.")
         elif currentplace in [51, 52, 53, 61, 63]: 
             print(BoldText("The River"))
+            print("A flowing stream of pristine, crystal clear water flows in a smooth - perfectly linear line, segregating woods from farmland.")
         elif currentplace in [62]: 
             print(BoldText("The Blood-Smeared Water Wheel"))
+            print("A circle of wood spins in an infinite cycle of clockwise motion - accompanying the river's flow, almost hypnotising to the human eye.")
         elif currentplace in [54, 64]: 
             print(BoldText("A Fragile Bridge"))
+            print("A pile of wooden planks, clumsily nailed together, form an unstable pathway from the roadside to the farmland.")
         elif currentplace in [71, 81]: 
             print(BoldText("A Noisy Pig Pen"))
+            print("The constant, never-ending noise of grunts and squeals rose from a self-built pen, encapsulating over a dozen of fat, spoiled pigs, lying lethargically in the mud.")
         elif currentplace in [72, 82]: 
             print(BoldText("The Cozy Farmhouse"))
+            print("Although the abode is visibly not the most luxurious nor sanitary in comparison to those in the city, its simplicity has a comfortable, pleasant air, and is unquestionably more than adequate to house the farmer's family of four.")
         elif currentplace in [84]: 
             print(BoldText("A Half-Empty Horse Stable"))
+            print("A large, rectangular, wooden structure stands firmly, sheathing a diversified variety of horses.")
     
     
     
@@ -125,7 +133,7 @@ while game==0:
         if currentplace in [11, 12, 14, 31, 32, 34, 41, 42, 44, 73, 74, 83]: 
             if item in ["trees", "shadows"]: 
                 if item=="trees": 
-                    print("It's just a normal old tree, green leaves and all.")
+                    print("It's just a stereotypical tall tree, green leaves and all.")
                 elif item=="shadows": 
                     print("Raven-black figures cover the floor...")
             else: 
