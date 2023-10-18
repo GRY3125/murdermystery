@@ -74,6 +74,8 @@ while game==0:
             print("You stand at the edge of the riverbank, and after careful consideration, you decide that going into the river is not wise. Perhaps there is a bridge somewhere?")
         elif commanddd in ["west", "w"] and currentplace in [62]: 
             print("You stare at the water wheel... Did you just think of running into it and killing yourself?")
+        elif commanddd in ["south", "s"] and currentplace in [54, 64]: 
+            print("You look downwards at the river flowing under the bridge. Maybe jumping in is not a good idea.")
         elif commanddd in ["north", "n"]: 
             if currentplace%10<4: 
                 currentplace+=1
