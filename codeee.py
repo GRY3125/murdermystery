@@ -1,6 +1,8 @@
 inventorylist=["apple"]
 currentplace=13 # xy = (x,y) coordinate
 
+fleshdiscovered=0
+
 def CommandV(): 
     check=0
     while check==0: 
@@ -19,6 +21,8 @@ def CommandV():
     # commands left to code:
     # examine/x 
     # use/u
+    ### apple 
+    ### speculation
     # get
     # interact/e * add people too *
             
@@ -52,7 +56,7 @@ while game==0:
 
 
     if commanddd in ["inventory", "inv", "i"]: 
-        print(*inventorylist)
+        print(*inventorylist,sep=", ")
         if commanddd!=commandinput: 
             print("Everything behind "+commanddd+" is ignored...")
     
@@ -142,11 +146,17 @@ while game==0:
                 
         if currentplace in [62]: 
             if item in ["flesh"]: 
-                print("traumatising flashback")
+                print("Stripped pieces of meat rotting away, producing an abominable smell of the dead, attracting a swarm of hungry flies.")
+                if fleshdiscovered==0: 
+                    print("\nIt must have been a dark night and chilly night, except darker than most and colder. The night held reign upon the world, watching - in its full, white roundness. The trees sway against the wind, imitating the living, feeding the eerie atmosphere. James Brown stood at the tip of the river, voice course from screaming, blood dripping down from the wounds he gained from the accident that just occurred. Looking into the abyssal woods with little to no light to support his vision, a silhouette of a person could be barely made out in the distance. Before he could comprehend the situation, he was pushed into the ravenous river. Being a farm boy all his life, no one had taught him to swim and so struggling to keep afloat, all he could do was to get carried away by the current. And down he went, until he was plunged into a wooden, circular structure, and left to be torn apart inescapably...")
+                    print("\nSpeculation has been added to inventory.")
+                    fleshdiscovered=1
+                    inventorylist.append("speculation")
             else: 
                 print("Object not found...")
-    else: 
-        print("No object was given...")
+        
+        else: 
+            print("No object was given...")
         
         
 
