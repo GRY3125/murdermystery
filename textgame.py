@@ -20,7 +20,7 @@ def CommandV():
     # examine/x 
     # use/u
     # get
-    # interact/e
+    # interact/e * add people too *
             
             
 def BoldText(Input): 
