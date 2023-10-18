@@ -128,8 +128,9 @@ while game==0:
     
     
     
-    if commanddd in ["examine", "x"]: 
+    if commanddd in ["examine", "x"] and len(commandl)>1: 
         item=commandl[1]
+        
         if currentplace in [11, 12, 14, 31, 32, 34, 41, 42, 44, 73, 74, 83]: 
             if item in ["trees", "shadows"]: 
                 if item=="trees": 
@@ -138,3 +139,16 @@ while game==0:
                     print("Raven-black figures cover the floor...")
             else: 
                 print("Object not found...")
+                
+        if currentplace in [62]: 
+            if item in ["flesh"]: 
+                print("traumatising flashback")
+            else: 
+                print("Object not found...")
+    else: 
+        print("No object was given...")
+        
+        
+
+
+
