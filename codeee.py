@@ -23,7 +23,7 @@ def CommandV():
     ### use/u? 
     ### get?
     ### interact/e + add people in x
-    # set allevidencediscovered=1 when all evidence found            
+    # set allevidencediscovered=1 when everything examined + suspects interrogated
             
 def BoldText(Input): 
     Input="\033[1m"+Input+"\033[0m"
@@ -233,6 +233,8 @@ while game==0:
         print("No object was given...")
         
         
+    
+    
     
     if commanddd in ["suspect"] and len(commandl)>1 and allevidencediscovered==1: 
         if commandinput in ["suspect 1", "suspect 2", "suspect 3", "suspect 4"]: 
