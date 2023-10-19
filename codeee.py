@@ -2,7 +2,7 @@ inventorylist=["apple"]
 currentplace=13 # xy = (x,y) coordinate
 
 fleshdiscovered=0
-allevidencediscovered=0
+allevidencediscovered=0 
 
 def CommandV(): 
     check=0
@@ -23,8 +23,7 @@ def CommandV():
     ### use/u? 
     ### get?
     ### interact/e + add people in x
-    # ending
-            
+    # set allevidencediscovered=1 when all evidence found            
             
 def BoldText(Input): 
     Input="\033[1m"+Input+"\033[0m"
@@ -233,32 +232,30 @@ while game==0:
     elif commanddd in ["use", "u"] and len(commandl)<2: 
         print("No object was given...")
         
-    
+        
     
     if commanddd in ["suspect"] and len(commandl)>1 and allevidencediscovered==1: 
-        sus=commandl
-        sus.remove(sus[0])
-        sus=str(*sus)
-        sus.lower()
-        if sus in ["logan alexander" ,"bobbylee jones", "hubert james benedict", "barbara william benedict"]: 
+        if commandinput in ["suspect 1", "suspect 2", "suspect 3", "suspect 4"]: 
             game=1
         else: 
-            print("Suspect unidentified, remember to type the full name with no typos.")
+            print("Invalid suspect. Please type 'suspect x', where x is a number from 1 to 4.")
+            print("\n1: Logan Alexander \n2: Bobbylee Jones \n3: Hubert James Benedict \n4: Barbara William Benedict")
     elif commanddd in ["suspect"] and len(commandl)<2 and allevidencediscovered==1: 
         print("No suspect given.")
     elif commanddd in ["suspect"] and allevidencediscovered==0:
-        print("You have to examine every single object and obtain every single piece of evidence before finalising a suspect. You should've known that, arne't you a detective?")
+        print("You have to examine every single object and obtain every single piece of evidence before finalising a suspect. You should've known that, aren't you a detective?")
         
         
 
-if sus=="bobbylee jones": 
+if commandinput=="suspect 2": 
     print("\nReturning back from the crime scene, you receive a call from the police station that the suspect has been brought in, and you must be present to conduct further interrogation. You ask questions and collect further information on the events, and use certain techniques to intimidate the suspect into confessing. After a few hours of going back and forth, you realise that the suspect starts to get increasingly nervous - constantly tapping on the table, scratching behind his ear, and providing more mismatched information. Until finally, he confesses…")
-    print("\nBobbylee Jones : Fine, I’m the one who did it! But believe me, it really was an accident. The road was dark and I could barely see anything, and there this kid came running onto the road. What do you expect me to do! I can’t just magically fly over him and so yea, I ended up running into him okay! But guess what, he was still alive, and I admit I did see him get up and run over the river but I swear after that it had nothing to do with me! It really was all an accident, I didn’t murder him!")
+    print("\nBobbylee Jones : Fine, I'm the one who did it! But believe me, it really was an accident. The road was dark and I could barely see anything, and there this kid came running onto the road. What do you expect me to do! I can't just magically fly over him and so yea, I ended up running into him okay! But guess what, he was still alive, and I admit I did see him get up and run over the river but I swear after that it had nothing to do with me! It really was all an accident, I didn't murder him!")
     print("\nAfter a year, Bobbylee Jones was sentenced to life in prison for the murder of 12 year boy, James Brown. It was later found out that Bobbylee had pushed James into the river - after finding he was still alive following the car crash - with the intention of drowning him.")
 else: 
     print("\nReturning back from the crime scene, you receive a call from the police station that the suspect has been brought in, and you must be present to conduct further interrogation. You ask questions and collect further information on the events, and use certain techniques to intimidate the suspect into confessing. After a few hours of going back and forth, you realise that the suspect has no intentions of confessing, staying firm on innocence. You can only hold the suspect for interrogation up to 24 hours, and therefore is forced to let him go with no substantial statements received. A court trial was then conducted, but with the little amount of solid evidence collected, the case was lost and the suspect was proved innocent. With the murderer still on the loose, you have failed your job as a detective…")
     print("\nTwo decades later, you sat comfortably on the soft couch in drowsy fashion, with the sun spilling through the windows, and the air conditioner buzzing away, you decide to turn on the news. On the screen was a middle aged, oddly familiar man in handcuffs, being shoved roughly into a cop car.")
     print("\nNews reporter: Good morning everyone, I am glad to inform you that the murderer responsible for the string of killings of children for the past 20 decades, has been caught. 40 year old Bobbylee Jone has confessed to be responsible for the infamous case of the murder of 12 year old boy James Brown, as well as many more. Although the murder of James Brown was an accident, he soon became accustomed to killing and started murdering intentionally for his own pleasure. We will be providing more information in the evening news, but for now a 30 minute break will commence. Thank you for watching CCB news, and make sure to stay safe.")
+
 
 
 
