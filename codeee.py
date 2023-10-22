@@ -231,7 +231,7 @@ while game==0:
                 if dialogueyn=="": 
                     dialogueee=1
                 dialoguenumber=0
-                dialoguelist=["What is your full name? \n>>> Bobbylee Jones", "What is your occupation? \n>>> College student", "Can you provide details about your activities on the night of the crime? \n>>> I was driving on the road as usual, but a little boy suddenly rushed out from the woods. It's unbelievable, really, how some parents can't be bothered to keep an eye on their children, even letting them run on a highway! \n>>> I swerved my car to avoid hitting the child, but it ended up colliding with a tree. The sound of the impact... it's something I won't forget. \n>>> I tried to get help; however, the pain in my head was getting unbearable, and all I could think of was that I might not make it out of this ordeal alive.", "What is your reason for driving on this road? \n>>> I'm simply on my way back from college; it's part of my weekly routine.", "When do you crash the car? \n>>> It's in the evening, I guess it's around 10 o'clock.", "What is the last time you saw the boy? \n>>> On the road before the car crash… I was really scared of the accident, that I didn't pay any more attention to the boy.", "Can you describe the boy? \n>>> I can’t see him really clearly, but I think he is about 60 inches high (1.55m), and he is in black.", "Did you hurt the boy? \n>>> No .. I don't think so.", "Did you see anyone else other than the boy? \n>>> Nope"]
+                dialoguelist=["What is your full name? \n>>> Bobbylee Jones", "What is your occupation? \n>>> College student", "Can you provide details about your activities on the night of the crime? \n>>> I was driving on the road as usual, but a little boy suddenly rushed out from the woods. It's unbelievable, really, how some parents can't be bothered to keep an eye on their children, even letting them run on a highway! \n>>> I swerved my car to avoid hitting the child, but it ended up colliding with a tree. The sound of the impact... it's something I won't forget. \n>>> I tried to get help; however, the pain in my head was getting unbearable, and all I could think of was that I might not make it out of this ordeal alive.", "What is your reason for driving on this road? \n>>> I was simply on my way back from college; it's part of my weekly routine.", "When do you crash the car? \n>>> It's in the evening, I guess it's around 10 o'clock.", "What is the last time you saw the boy? \n>>> On the road before the car crash… I was really scared of the accident, that I didn't pay any more attention to the boy.", "Can you describe the boy? \n>>> I can’t see him really clearly, but I think he is about 60 inches high (1.55m), and he is in black.", "Did you hurt the boy? \n>>> No .. I don't think so.", "Did you see anyone else other than the boy? \n>>> Nope"]
                 while dialogueee==1 and dialoguenumber<len(dialoguelist): 
                     print(dialoguelist[dialoguenumber])
                     dialogueyn=input()
@@ -240,15 +240,28 @@ while game==0:
                     else: 
                         dialogueee=0
                         print("Dialogue ended.")
-                    
             else: 
                 print("Person not found...")
                 
-        # elif currentplace in [13]: 
-        #     if item in ["car"]: 
-        #         print("A Toyota AE86, nothing out of the ordinary, just the regular, four wheel drive, you could spot anywhere on the road.")
-        #     else: 
-        #         print("Person not found...")
+        elif currentplace in [84]: 
+            if person in ["stableboy"]: 
+                print("Logan had just woken up after the police arrived. As they shared the sad news of James' death, Logan was stricken with a profound sense of disbelief as if the world had shifted beneath him. His eyes welled up as he grappled with the heavy reality of losing his dear friend. \nLogan walked straight to the innermost of the stable, where it stood an attractive house, which accompanied James through his life. In a quiet tone, Logan shared the tragic news with the house.")
+                print("Press enter to continue the dialogue. \n")
+                dialogueyn=input()
+                if dialogueyn=="": 
+                    dialogueee=1
+                dialoguenumber=0
+                dialoguelist=["What is your full name? \n>>> Logan Alexander", "What is your occupation? \n>>> Stable boy", "Can you provide details about your activities yesterday? \n>>> Last night, I went to bed as usual after I visited my horses for the last time. \n>>> But later in the night, I suddenly woke up because I was thirsty, so I went to collect some fresh water along the river. But the water tasted a little abnormal, as if there was a pinch of iron?", "When do you go to bed? \n>>> Around 9:00 pm", "When do you go to collect the water? \n>>> I didn't check the clock, but it's probably about 10-11pm because the stars were not visible.", "Did you see anyone when you went out? \n>>> No, I don't think so.", "Did you hear any noise last night? \n>>> Noise? What noise? Not really, I'm a deep sleeper.", "What is your relationship with the boy? \n>>> Of course, we are close friends with each other! I treated him as my little brother. James is such a kind soul, and he willingly helped me with the tough tasks in the stable. \n>>>I'm so so sorry to hear about his… death. \nTears start to well up in Logan's eyes. \n>>>It must have been because of his family, you know... you know how they treated James every day? It's just inhumane. They gave all of their love to their own kid."]
+                while dialogueee==1 and dialoguenumber<len(dialoguelist): 
+                    print(dialoguelist[dialoguenumber])
+                    dialogueyn=input()
+                    if dialogueyn=="": 
+                        dialoguenumber+=1
+                    else: 
+                        dialogueee=0
+                        print("Dialogue ended.")
+            else: 
+                print("Person not found...")
                 
         # if more than one person check examine command for structure
                 
