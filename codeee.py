@@ -23,13 +23,16 @@ def CommandV():
     ### use/u? 
     ### get?
     ### interact/e + add people in x
-    # set allevidencediscovered=1 when everything examined + suspects interrogated
+    # set allevidencediscovered=1 when everything examined + suspects interrogated, print suspect command
             
 def BoldText(Input): 
     Input="\033[1m"+Input+"\033[0m"
     return Input
 def UnderlineText(Input): 
     Input="\033[4m"+Input+"\033[0m"
+    return Input
+def CyanText(Input): 
+    Input="\033[96m"+Input+"\033[0m"
     return Input
 
 print("\n\n"+BoldText("The Murder Of James Brown"))
@@ -112,7 +115,7 @@ while game==0:
             print("Towering "+UnderlineText("trees")+" surround you depriving any entry of light, trembling against the harsh wind, casting "+UnderlineText("shadows")+" in an engulfing abyss...")
         elif currentplace in [13]: 
             print(BoldText("A Crashed Car"))
-            print("A pungent smell of burning rises from the catastrophe - a barely recognisable "+UnderlineText("car")+", jammed into the trunks of a rotting tree.")
+            print("A pungent smell of burning rises from the catastrophe - a barely recognisable "+UnderlineText("car")+", jammed into the trunks of a rotting tree. There is a "+CyanText("driver")+" nearby.")
         elif currentplace in [21, 22, 24]: 
             print(BoldText("A Narrow Road"))
             print("A pavement of concrete, striped systematically in white, stretches as far as the eye can see - twisting and turning through the trees,  eventually disappearing into the darkness of the woods.")
