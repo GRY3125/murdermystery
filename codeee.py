@@ -336,7 +336,7 @@ while game==0:
         elif currentplace in [74]: 
             if person in ["kid"]: 
                 print("The little boy is curled up into a ball on the ground, his face burried in his body while he hugs his trembling legs.")
-                print(">>> I don't know what happened!! There was a loud shout at night. Mama said she should check what happened. I said no. I was scared to be alone. And mama said someone died this morning. I've been hiding here since.")
+                print(">>> I don't know what happened!! There was a loud shout at night. Mama said she should check what happened. I said no. I was scared to be alone. And mama said someone died this morning. I've been hiding here since. Don't tell mama.")
                 print("He gets up and scurries off, but your guts tell you that he will return to this spot as he has no where else to go.")
                 
         else: 
