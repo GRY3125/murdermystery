@@ -1,3 +1,12 @@
+# commands left to code:
+### use/u? 
+### get?
+### interact/e + add people in x
+# clues
+# set allevidencediscovered=1 when everything examined + suspects interrogated, print suspect command
+
+
+
 inventorylist=["apple"]
 currentplace=13 # xy = (x,y) coordinate
 
@@ -18,12 +27,6 @@ def CommandV():
                 print("Invalid command. Type 'help' for a list of valid commands...")
         else: 
             print("An empty void... Are you lost? \nType 'help' for a list of valid commands...")
-    
-    # commands left to code:
-    ### use/u? 
-    ### get?
-    ### interact/e + add people in x
-    # set allevidencediscovered=1 when everything examined + suspects interrogated, print suspect command
             
 def BoldText(Input): 
     Input="\033[1m"+Input+"\033[0m"
@@ -142,7 +145,7 @@ while game==0:
             print("Although the abode is visibly not the most luxurious nor sanitary in comparison to those in the city, its simplicity has a comfortable, pleasant air, and is unquestionably more than adequate to house the farmer's family of four.")
         elif currentplace in [84]: 
             print(BoldText("A Half-Empty Horse Stable"))
-            print("A large, rectangular, wooden structure stands firmly, sheathing a diversified variety of "+UnderlineText("horses")+".")
+            print("A large, rectangular, wooden structure stands firmly, sheathing a diversified variety of "+UnderlineText("horses")+". There is a "+CyanText("stableboy")+" at a corner of the stable.")
     
     
     
