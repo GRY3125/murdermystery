@@ -1,7 +1,6 @@
 # commands left to code:
 ### use/u? 
 ### get?
-### interact/e + add people in x
 # clues
 # set allevidencediscovered=1 when everything examined + suspects interrogated, print suspect command
 
@@ -142,11 +141,12 @@ while game==0:
             print("The constant, never-ending noise of grunts and squeals rose from a self-built pen, encapsulating over a dozen of fat, spoiled "+UnderlineText("pigs")+", lying lethargically in the mud.")
         elif currentplace in [72, 82]: 
             print(BoldText("The Cozy Farmhouse"))
-            print("Although the abode is visibly not the most luxurious nor sanitary in comparison to those in the city, its simplicity has a comfortable, pleasant air, and is unquestionably more than adequate to house the farmer's family of four.")
+            print("Although the abode is visibly not the most luxurious nor sanitary in comparison to those in the city, its simplicity has a comfortable, pleasant air, and is unquestionably more than adequate to house the farmer's family of four. The "+CyanText("farmer")+" stands awkwardly by the door, while his "+CyanText("wife")+" leans on the wall by the stairs.")
         elif currentplace in [84]: 
             print(BoldText("A Half-Empty Horse Stable"))
             print("A large, rectangular, wooden structure stands firmly, sheathing a diversified variety of "+UnderlineText("horses")+". There is a "+CyanText("stableboy")+" at a corner of the stable.")
-    
+        if currentplace in [74]: 
+            print("There is a little "+CyanText("kid")+" sobbing in a corner.")
     
     
     
@@ -237,7 +237,14 @@ while game==0:
                 if dialogueyn=="": 
                     dialogueee=1
                 dialoguenumber=0
-                dialoguelist=["What is your full name? \n>>> Bobbylee Jones", "What is your occupation? \n>>> College student", "Can you provide details about your activities on the night of the crime? \n>>> I was driving on the road as usual, but a little boy suddenly rushed out from the woods. It's unbelievable, really, how some parents can't be bothered to keep an eye on their children, even letting them run on a highway! \n>>> I swerved my car to avoid hitting the child, but it ended up colliding with a tree. The sound of the impact... it's something I won't forget. \n>>> I tried to get help; however, the pain in my head was getting unbearable, and all I could think of was that I might not make it out of this ordeal alive.", "What is your reason for driving on this road? \n>>> I was simply on my way back from college; it's part of my weekly routine.", "When do you crash the car? \n>>> It's in the evening, I guess it's around 10 o'clock.", "What is the last time you saw the boy? \n>>> On the road before the car crash… I was really scared of the accident, that I didn't pay any more attention to the boy.", "Can you describe the boy? \n>>> I can’t see him really clearly, but I think he is about 60 inches high (1.55m), and he is in black.", "Did you hurt the boy? \n>>> No .. I don't think so.", "Did you see anyone else other than the boy? \n>>> Nope"]
+                dialoguelist=["What is your full name? \n>>> Bobbylee Jones", 
+                              "What is your occupation? \n>>> College student", 
+                              "Can you provide details about your activities on the night of the crime? \n>>> I was driving on the road as usual, but a little boy suddenly rushed out from the woods. It's unbelievable, really, how some parents can't be bothered to keep an eye on their children, even letting them run on a highway! \n>>> I swerved my car to avoid hitting the child, but it ended up colliding with a tree. The sound of the impact... it's something I won't forget. \n>>> I tried to get help; however, the pain in my head was getting unbearable, and all I could think of was that I might not make it out of this ordeal alive.", 
+                              "What is your reason for driving on this road? \n>>> I was simply on my way back from college; it's part of my weekly routine.", 
+                              "When do you crash the car? \n>>> It's in the evening, I guess it's around 10 o'clock.", 
+                              "What is the last time you saw the boy? \n>>> On the road before the car crash... I was really scared of the accident, that I didn't pay any more attention to the boy.", 
+                              "Can you describe the boy? \n>>> I can't see him really clearly, but I think he is about 60 inches high (1.55m), and he is in black.", "Did you hurt the boy? \n>>> No .. I don't think so.", 
+                              "Did you see anyone else other than the boy? \n>>> Nope"]
                 while dialogueee==1 and dialoguenumber<len(dialoguelist): 
                     print(dialoguelist[dialoguenumber])
                     dialogueyn=input()
@@ -246,6 +253,56 @@ while game==0:
                     else: 
                         dialogueee=0
                         print("Dialogue ended.")
+            else: 
+                print("Person not found...")
+                
+        elif currentplace in [72, 82]: 
+            if person in ["wife", "farmer"]: 
+                if person=="wife": 
+                    print("She stood at the staircase,  anxiously waited for the police to come. Her swollen, reddened eyes showed the tears that had flowed. her trembling hand shook uncontrollably, fingers interlocked in a tight and desperate grip, as if they were seeking solace and strength from one another.")
+                    print("Press enter to continue the dialogue. \n")
+                    dialogueyn=input()
+                    if dialogueyn=="": 
+                        dialogueee=1
+                    dialoguenumber=0
+                    dialoguelist=["What is your full name? \n>>> Bar...bara Will...liam Bene...dict", 
+                                  "What is your occupation? \n>>> I'm the... wife of the farmer... who owns this land...", 
+                                  "Can you provide details about your activities and what happened? \n>>> As usual, I woke up early in the morning to wash the entire family's clothes... by the river... However, I found out that the waterwheel was not working... Then I noticed the... \nShe inhales deeply and exhales wobbly. \n>>> body pieces... of my dear boy... stuck in the wheel. Blood splashed up the machine. I wasted no time; I immediately called the police. \n>>> Oh, I remember hearing a loud noise... akin to a scream, in the early night... At the time, I dismissed it because I believed it was the pigs' cry... I regret not looking after James... James was afraid of water, and it's impossible for him to go near the water... It cannot be an accident to slip into the wheel! It's glaringly apparent that someone malevolently took his life! It's a gruesome murder!!!"
+                                  "Did you go out after you heard the scream? \n>>> No, I stayed with Luke all night... He was afraid to be alone in the house.",
+                                  "When did you hear the noise/scream? \n>>> Approximately 10:30pm I think...", 
+                                  "Did you see anyone near the wheel this morning? \n>>> No", 
+                                  "Is that boy your son? \n>>> Yes, he is our son... I can't bear to hear the news of his... death...", 
+                                  "How is your relationship with the boy? \n>>> We have a good relationship... it's truly puzzling why anyone would harbour ill will towards such a sweet and gentle child...", 
+                                  "Was Bobylee ever inclined to commit suicide? \n>>> No, never! How would that lively boy ever wish for his own demise."]
+                    while dialogueee==1 and dialoguenumber<len(dialoguelist): 
+                        print(dialoguelist[dialoguenumber])
+                        dialogueyn=input()
+                        if dialogueyn=="": 
+                            dialoguenumber+=1
+                        else: 
+                            dialogueee=0
+                            print("Dialogue ended.")
+                if person=="farmer":
+                    print("After two hours of the police starting their investigation into the murder, Hubert finally arrived at the scene with a sense of happiness and enjoyment. As he took in the grim reality before him, shock and disbelief washed over his joy, making him speechless. His wrinkled face looked increasingly old.")
+                    print("Press enter to continue the dialogue. \n")
+                    dialogueyn=input()
+                    if dialogueyn=="": 
+                        dialogueee=1
+                    dialoguenumber=0
+                    dialoguelist=["What is your full name? \n>>> Hubert James Benedict", 
+                                  "What is your occupation? \n>>> Farmer, the owner of this farmland", 
+                                  "Can you provide details about your activities yesterday? \n>>>I headed into the city yesterday to sell the corn at the street market since we harvested the wheat for this autumn. It's been the most profitable season I've ever experienced. BUT, but.. James cannot enjoy it... \n>>> The farm is quite far from the city, making it a half-day round trip. So, I thought it best to stay at a small hotel near the market.", 
+                                  "When did you leave the farm? \n>>> Yesterday morning, about 6 o'clock", 
+                                  "What is your relationship with the boy? \n>>> He is my son, we adopted this young fellow when we found him being abandoned near our farm. His life has been filled with hardship and tragedy, poor boy.", 
+                                  "How is your relationship with the boy? \n>>> Of course we have a good relationship! James is a part of our family. We've always treated James with kindness, offering him a warm and welcoming home. James is also helpful with farm work, he is so favourable."]
+                    while dialogueee==1 and dialoguenumber<len(dialoguelist): 
+                        print(dialoguelist[dialoguenumber])
+                        dialogueyn=input()
+                        if dialogueyn=="": 
+                            dialoguenumber+=1
+                        else: 
+                            dialogueee=0
+                            print("Dialogue ended.")
             else: 
                 print("Person not found...")
                 
@@ -257,7 +314,14 @@ while game==0:
                 if dialogueyn=="": 
                     dialogueee=1
                 dialoguenumber=0
-                dialoguelist=["What is your full name? \n>>> Logan Alexander", "What is your occupation? \n>>> Stable boy", "Can you provide details about your activities yesterday? \n>>> Last night, I went to bed as usual after I visited my horses for the last time. \n>>> But later in the night, I suddenly woke up because I was thirsty, so I went to collect some fresh water along the river. But the water tasted a little abnormal, as if there was a pinch of iron?", "When do you go to bed? \n>>> Around 9:00 pm", "When do you go to collect the water? \n>>> I didn't check the clock, but it's probably about 10-11pm because the stars were not visible.", "Did you see anyone when you went out? \n>>> No, I don't think so.", "Did you hear any noise last night? \n>>> Noise? What noise? Not really, I'm a deep sleeper.", "What is your relationship with the boy? \n>>> Of course, we are close friends with each other! I treated him as my little brother. James is such a kind soul, and he willingly helped me with the tough tasks in the stable. \n>>>I'm so so sorry to hear about his… death. \nTears start to well up in Logan's eyes. \n>>>It must have been because of his family, you know... you know how they treated James every day? It's just inhumane. They gave all of their love to their own kid."]
+                dialoguelist=["What is your full name? \n>>> Logan Alexander", 
+                              "What is your occupation? \n>>> Stable boy", 
+                              "Can you provide details about your activities yesterday? \n>>> Last night, I went to bed as usual after I visited my horses for the last time. \n>>> But later in the night, I suddenly woke up because I was thirsty, so I went to collect some fresh water along the river. But the water tasted a little abnormal, as if there was a pinch of iron?", 
+                              "When do you go to bed? \n>>> Around 9:00 pm", 
+                              "When do you go to collect the water? \n>>> I didn't check the clock, but it's probably about 10-11pm because the stars were not visible.", 
+                              "Did you see anyone when you went out? \n>>> No, I don't think so.", 
+                              "Did you hear any noise last night? \n>>> Noise? What noise? Not really, I'm a deep sleeper.", 
+                              "What is your relationship with the boy? \n>>> Of course, we are close friends with each other! I treated him as my little brother. James is such a kind soul, and he willingly helped me with the tough tasks in the stable. \n>>>I'm so so sorry to hear about his... death. \nTears start to well up in Logan's eyes. \n>>>It must have been because of his family, you know... you know how they treated James every day? It's just inhumane. They gave all of their love to their own kid."]
                 while dialogueee==1 and dialoguenumber<len(dialoguelist): 
                     print(dialoguelist[dialoguenumber])
                     dialogueyn=input()
@@ -269,7 +333,11 @@ while game==0:
             else: 
                 print("Person not found...")
                 
-        # if more than one person check examine command for structure
+        elif currentplace in [74]: 
+            if person in ["kid"]: 
+                print("The little boy is curled up into a ball on the ground, his face burried in his body while he hugs his trembling legs.")
+                print(">>> I don't know what happened!! There was a loud shout at night. Mama said she should check what happened. I said no. I was scared to be alone. And mama said someone died this morning. I've been hiding here since.")
+                print("He gets up and scurries off, but your guts tell you that he will return to this spot as he has no where else to go.")
                 
         else: 
             print("No one to talk to here.")
@@ -311,11 +379,11 @@ while game==0:
         
 
 if commandinput=="suspect 2": 
-    print("\nReturning back from the crime scene, you receive a call from the police station that the suspect has been brought in, and you must be present to conduct further interrogation. You ask questions and collect further information on the events, and use certain techniques to intimidate the suspect into confessing. After a few hours of going back and forth, you realise that the suspect starts to get increasingly nervous - constantly tapping on the table, scratching behind his ear, and providing more mismatched information. Until finally, he confesses…")
+    print("\nReturning back from the crime scene, you receive a call from the police station that the suspect has been brought in, and you must be present to conduct further interrogation. You ask questions and collect further information on the events, and use certain techniques to intimidate the suspect into confessing. After a few hours of going back and forth, you realise that the suspect starts to get increasingly nervous - constantly tapping on the table, scratching behind his ear, and providing more mismatched information. Until finally, he confesses...")
     print("\nBobbylee Jones : Fine, I'm the one who did it! But believe me, it really was an accident. The road was dark and I could barely see anything, and there this kid came running onto the road. What do you expect me to do! I can't just magically fly over him and so yea, I ended up running into him okay! But guess what, he was still alive, and I admit I did see him get up and run over the river but I swear after that it had nothing to do with me! It really was all an accident, I didn't murder him!")
     print("\nAfter a year, Bobbylee Jones was sentenced to life in prison for the murder of 12 year boy, James Brown. It was later found out that Bobbylee had pushed James into the river - after finding he was still alive following the car crash - with the intention of drowning him.")
 else: 
-    print("\nReturning back from the crime scene, you receive a call from the police station that the suspect has been brought in, and you must be present to conduct further interrogation. You ask questions and collect further information on the events, and use certain techniques to intimidate the suspect into confessing. After a few hours of going back and forth, you realise that the suspect has no intentions of confessing, staying firm on innocence. You can only hold the suspect for interrogation up to 24 hours, and therefore is forced to let him go with no substantial statements received. A court trial was then conducted, but with the little amount of solid evidence collected, the case was lost and the suspect was proved innocent. With the murderer still on the loose, you have failed your job as a detective…")
+    print("\nReturning back from the crime scene, you receive a call from the police station that the suspect has been brought in, and you must be present to conduct further interrogation. You ask questions and collect further information on the events, and use certain techniques to intimidate the suspect into confessing. After a few hours of going back and forth, you realise that the suspect has no intentions of confessing, staying firm on innocence. You can only hold the suspect for interrogation up to 24 hours, and therefore is forced to let him go with no substantial statements received. A court trial was then conducted, but with the little amount of solid evidence collected, the case was lost and the suspect was proved innocent. With the murderer still on the loose, you have failed your job as a detective...")
     print("\nTwo decades later, you sat comfortably on the soft couch in drowsy fashion, with the sun spilling through the windows, and the air conditioner buzzing away, you decide to turn on the news. On the screen was a middle aged, oddly familiar man in handcuffs, being shoved roughly into a cop car.")
     print("\nNews reporter: Good morning everyone, I am glad to inform you that the murderer responsible for the string of killings of children for the past 20 decades, has been caught. 40 year old Bobbylee Jone has confessed to be responsible for the infamous case of the murder of 12 year old boy James Brown, as well as many more. Although the murder of James Brown was an accident, he soon became accustomed to killing and started murdering intentionally for his own pleasure. We will be providing more information in the evening news, but for now a 30 minute break will commence. Thank you for watching CCB news, and make sure to stay safe.")
 
