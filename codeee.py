@@ -6,7 +6,7 @@
 
 
 
-inventorylist=["apple"]
+inventorylist=["apple", "autopsy report"]
 currentplace=13 # xy = (x,y) coordinate
 
 fleshdiscovered=0
@@ -56,9 +56,7 @@ while game==0:
         xCoOrd=currentplace//10
         yCoOrd=currentplace%10
         print("Your current location is ("+str(xCoOrd)+", "+str(yCoOrd)+")...")
-        print("\n'north'/'n': go north \n'east'/'e': go east \n'south'/'s': go south \n'west'/'w': go west")
-        print("'look'/'l': look at your surroundings \n'examine'/'x': examine an object \n'inventory'/'inv'/'i': check your inventory")
-        print("'use'/'u': use an object \n'get': get an object \n'interact'/'t': interact with a character")
+        print("\n'north'/'n': go north \n'east'/'e': go east \n'south'/'s': go south \n'west'/'w': go west \n'look'/'l': look at your surroundings \n'examine'/'x': examine an object \n'inventory'/'inv'/'i': check your inventory \n'use'/'u': use an object \n'get': get an object \n'interact'/'t': interact with a character")
 
 
 
@@ -350,14 +348,27 @@ while game==0:
     
     
     if commanddd in ["use", "u"] and len(commandl)>1: 
-        item=commandl[1]
-        if item in inventorylist: 
-            if item=="apple": 
+        item=commandl[1:]
+        itemmm=""
+        for x in range(len(item)): 
+            itemmm=itemmm+" "+str(item[x])
+        itemmm=itemmm[1:]
+        if itemmm in inventorylist: 
+            if itemmm=="apple": 
                 print("You take a bite into the scrumptious apple, and then place it back into your bag.")
-            elif item=="speculation": 
+            elif itemmm=="speculation": 
                 print("It must have been a dark night and chilly night, except darker than most and colder. The night held reign upon the world, watching - in its full, white roundness. The trees sway against the wind, imitating the living, feeding the eerie atmosphere. James Brown stood at the tip of the river, voice course from screaming, blood dripping down from the wounds he gained from the accident that just occurred. Looking into the abyssal woods with little to no light to support his vision, a silhouette of a person could be barely made out in the distance. Before he could comprehend the situation, he was pushed into the ravenous river. Being a farm boy all his life, no one had taught him to swim and so struggling to keep afloat, all he could do was to get carried away by the current. And down he went, until he was plunged into a wooden, circular structure, and left to be torn apart inescapably...")
+            elif itemmm=="autopsy report": 
+                print("\n"+BoldText("AUTOPSY REPORT"))
+                print(BoldText("Name: ")+"James Brown")
+                print(BoldText("Case Number: ")+"[198308031]")
+                print(BoldText("Date of Autopsy: ")+"[1983.08.03]")
+                print(BoldText("Identification: ")+"\nClothing - black shirts")
+                print(BoldText("Time of Death: ")+"\nAround 10pm, 1983.08.02")
+                print(BoldText("Cause of Death: ")+"\n1. Immediate Cause: excessive loss of blood \n2. Underlying Causes: cerebral concussion, fracture, organ failure \n3. Manner of Death: [Undetermined]")
         else: 
             print("Object is not in inventory...")
+            print(itemmm)
     elif commanddd in ["use", "u"] and len(commandl)<2: 
         print("No object was given...")
         
