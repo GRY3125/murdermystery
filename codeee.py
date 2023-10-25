@@ -139,7 +139,8 @@ while game==0:
             print("The constant, never-ending noise of grunts and squeals rose from a self-built pen, encapsulating over a dozen of fat, spoiled "+UnderlineText("pigs")+", lying lethargically in the mud.")
         elif currentplace in [72, 82]: 
             print(BoldText("The Cozy Farmhouse"))
-            print("Although the abode is visibly not the most luxurious nor sanitary in comparison to those in the city, its simplicity has a comfortable, pleasant air, and is unquestionably more than adequate to house the farmer's family of four. The "+CyanText("farmer")+" stands awkwardly by the door, while his "+CyanText("wife")+" leans on the wall by the stairs.")
+            print("Although the abode is visibly not the most luxurious nor sanitary in comparison to those in the city, its simplicity has a comfortable, pleasant air, and is unquestionably more than adequate to house the farmer's family of four. There is a table with a cheap antique "+UnderlineText("telephone")+" sitting on it. Underneath it, you can see a yellowed, wrinkled piece of "+UnderlineText("paper")+", with fading words gently written across it.")
+            print("The "+CyanText("farmer")+" stands awkwardly by the door, while his "+CyanText("wife")+" leans on the wall by the stairs.")
         elif currentplace in [84]: 
             print(BoldText("A Half-Empty Horse Stable"))
             print("A large, rectangular, wooden structure stands firmly, sheathing a diversified variety of "+UnderlineText("horses")+". There is a "+CyanText("stableboy")+" at a corner of the stable.")
@@ -164,6 +165,7 @@ while game==0:
         elif currentplace in [13]: 
             if item in ["car"]: 
                 print("A Toyota AE86, nothing out of the ordinary, just the regular, four wheel drive, you could spot anywhere on the road.")
+                print("Right on the front hood of the car, there was a rather unusual smear of blood. It seemed improbable that it was Bobbylee's blood, but the presence of this mysterious stain left you wondering whether it had any link to the blood on the ground.")
             else: 
                 print("Object not found...")
                 
@@ -229,8 +231,8 @@ while game==0:
         
         if currentplace in [13]: 
             if person in ["driver"]: 
-                print("Bobbylee Jones was discovered leaning against a gnarled tree in a barely recognizable wreck of a car. His face was ruined by a dreadful wound that left visible evidence of the peril he had been in. Blood flowed from his forehead, staining his once-white shirt a deep crimson, and mirroring the horror of the scene. Fortunately, he made it through and awoke till the police rescued him right away.")
-                print("Press enter to continue the dialogue. \n")
+                print("Bobbylee Jones was discovered leaning against a gnarled tree in a barely recognizable wreck of a car. His face was ruined by a dreadful wound that left visible evidence of the peril he had been in. Blood flowed from his forehead, staining his once-white shirt a deep crimson, and mirroring the horror of the scene. Fortunately, he made it through and awoke till the police rescued him right away. \nWith a keen eye, you noticed something peculiar about Bobbylee's clothing. His shoes and trousers were full of mud, an anomaly considering that there was no reasonable explanation for mud stains unless he had recently traversed soil or a similarly muddy surface. ")
+                print("\nPress enter to continue the dialogue. \n")
                 dialogueyn=input()
                 if dialogueyn=="": 
                     dialogueee=1
@@ -366,6 +368,20 @@ while game==0:
                 print(BoldText("Identification: ")+"\nClothing - black shirts")
                 print(BoldText("Time of Death: ")+"\nAround 10pm, 1983.08.02")
                 print(BoldText("Cause of Death: ")+"\n1. Immediate Cause: excessive loss of blood \n2. Underlying Causes: cerebral concussion, fracture, organ failure \n3. Manner of Death: [Undetermined]")
+            elif itemmm=="call record": 
+                print("\n"+BoldText("TELEPHONE CALL RECORD"))
+                print(BoldText("Date: ")+"[1983.08.03]")
+                print(BoldText("Time: ")+"[6:15am]")
+                print(BoldText("Caller's Name: ")+"[Barbara William Benedict]")
+                print(BoldText("Receiver's Name: ")+"[Hubert James Benedict]")
+                print(BoldText("Call Duration: ")+"[3min48s]")
+                print(BoldText("Notes:"))
+                print("Barbara: Hubert! Oh dear... It's James! He... He's gone. I saw him, I saw him die!")
+                print("Hubert: James? No, it can't be...")
+                print("Barbara: James, the boy we adopted, he's gone, Hubert. Smashed by that waterwheel piece by piece.")
+                print("Hubert: Oh God... I... I need to go back and check on this, Barbara.")
+                print("Barbara: Don't rush, Hubert. As you know, be careful not to get involved in this tragedy too.")
+                print("Hubert: We won't have to prepare one more dish for dinner anymore. Ha! We are finally free from looking after that naughty boy!")
         else: 
             print("Object is not in inventory...")
             print(itemmm)
