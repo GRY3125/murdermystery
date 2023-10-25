@@ -57,7 +57,7 @@ while game==0:
         yCoOrd=currentplace%10
         print("Your current location is ("+str(xCoOrd)+", "+str(yCoOrd)+")...")
         print("\n'north'/'n': go north \n'east'/'e': go east \n'south'/'s': go south \n'west'/'w': go west")
-        print("'look'/'l': look at your surroundings \n'examine'/'x': examine an object \n''inventory'/'inv'/'i': check your inventory")
+        print("'look'/'l': look at your surroundings \n'examine'/'x': examine an object \n'inventory'/'inv'/'i': check your inventory")
         print("'use'/'u': use an object \n'get': get an object \n'interact'/'t': interact with a character")
 
 
@@ -183,7 +183,7 @@ while game==0:
                 
         elif currentplace in [51, 52, 53, 61, 63]: 
             if item in ["water"]: 
-                print("Unlike water sources back in the city, the water here is pure and refreshing, pure enough to be drunk straight from the river, as if it had been filtered since the start. You get a quiack glimpse of your reflection.")
+                print("Unlike water sources back in the city, the water here is pure and refreshing, pure enough to be drunk straight from the river, as if it had been filtered since the start. You get a quick glimpse of your reflection.")
             else: 
                 print("Object not found...")
         
@@ -321,7 +321,7 @@ while game==0:
                               "When do you go to collect the water? \n>>> I didn't check the clock, but it's probably about 10-11pm because the stars were not visible.", 
                               "Did you see anyone when you went out? \n>>> No, I don't think so.", 
                               "Did you hear any noise last night? \n>>> Noise? What noise? Not really, I'm a deep sleeper.", 
-                              "What is your relationship with the boy? \n>>> Of course, we are close friends with each other! I treated him as my little brother. James is such a kind soul, and he willingly helped me with the tough tasks in the stable. \n>>>I'm so so sorry to hear about his... death. \nTears start to well up in Logan's eyes. \n>>>It must have been because of his family, you know... you know how they treated James every day? It's just inhumane. They gave all of their love to their own kid."]
+                              "What is your relationship with the boy? \n>>> Of course, we are close friends with each other! I treated him as my little brother. James is such a kind soul, and he willingly helped me with the tough tasks in the stable. \n>>> I'm so so sorry to hear about his... death. \nTears start to well up in Logan's eyes. \n>>> It must have been because of his family, you know... you know how they treated James every day? It's just inhumane. They gave all of their love to their own kid."]
                 while dialogueee==1 and dialoguenumber<len(dialoguelist): 
                     print(dialoguelist[dialoguenumber])
                     dialogueyn=input()
