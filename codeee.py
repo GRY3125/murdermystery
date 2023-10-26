@@ -210,6 +210,12 @@ while game==0:
             else: 
                 print("Object not found...")
                 
+        elif currentplace in [72, 82]: 
+            if item in ["telephone", "paper"]: 
+                if item=="telephone": 
+                    print("You examine the telephone and find some call logs from this morning. It has been added into your inventory.")
+                    # DO FIRST TIME THING
+                
         elif currentplace in [84]: 
             if item in ["horses"]: 
                 print("Large, muscular, creatures stood, head held high and peaking over the fence - in anticipation for grazing time.")
