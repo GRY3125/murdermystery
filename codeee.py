@@ -213,8 +213,11 @@ while game==0:
         elif currentplace in [72, 82]: 
             if item in ["telephone", "paper"]: 
                 if item=="telephone": 
-                    print("You examine the telephone and find some call logs from this morning. It has been added into your inventory.")
-                    # DO FIRST TIME THING
+                    if "call record" not in inventorylist: 
+                        print("You examine the telephone and find some call logs from this morning. It has been added into your inventory.")
+                        inventorylist.append("call record")
+                    else: 
+                        print("You examine the telephone again, and then realise you already have the call logs in your inventory.")
                 
         elif currentplace in [84]: 
             if item in ["horses"]: 
@@ -245,11 +248,12 @@ while game==0:
                 dialoguenumber=0
                 dialoguelist=["What is your full name? \n>>> Bobbylee Jones", 
                               "What is your occupation? \n>>> College student", 
-                              "Can you provide details about your activities on the night of the crime? \n>>> I was driving on the road as usual, but a little boy suddenly rushed out from the woods. It's unbelievable, really, how some parents can't be bothered to keep an eye on their children, even letting them run on a highway! \n>>> I swerved my car to avoid hitting the child, but it ended up colliding with a tree. The sound of the impact... it's something I won't forget. \n>>> I tried to get help; however, the pain in my head was getting unbearable, and all I could think of was that I might not make it out of this ordeal alive.", 
+                              "Can you provide details about your activities on the night of the crime? \n>>> I was driving on the road as usual, but a little boy suddenly rushed out from the woods. It's unbelievable, really, how some parents can't be bothered to keep an eye on their children, even letting them run on a highway! \n>>> I swerved my car to avoid hitting the child, but it ended up colliding with a tree. The sound of the impact... it's something I won't forget. Oh, my new car... I've just bought it for 1 week, and with my own pocket money! \n>>> Anyways, I tried to get help; however, the pain in my head was getting unbearable, and all I could think of was that I might not make it out of this ordeal alive.", 
                               "What is your reason for driving on this road? \n>>> I was simply on my way back from college; it's part of my weekly routine.", 
                               "When do you crash the car? \n>>> It's in the evening, I guess it's around 10 o'clock.", 
-                              "What is the last time you saw the boy? \n>>> On the road before the car crash... I was really scared of the accident, that I didn't pay any more attention to the boy.", 
-                              "Can you describe the boy? \n>>> I can't see him really clearly, but I think he is about 60 inches high (1.55m), and he is in black.", "Did you hurt the boy? \n>>> No .. I don't think so.", 
+                              "What is the last time you saw the boy? \n>>> On the road before the car crash... after that, all I could see was the tree I had crashed into, and smoke rising from my car's trunk.", 
+                              "Can you describe the boy? \n>>> I couldn't see him really clearly due to there not being any street lamps around here, but he definitely was no adult judging from his small size... \nBobbylee scratched his head. \n>>> and if I'm not mistaken he was wearing a black shirt.", 
+                              "Did you hurt the boy? \n>>> No... I don't think so... my car and I got hurt instead :(", 
                               "Did you see anyone else other than the boy? \n>>> Nope"]
                 while dialogueee==1 and dialoguenumber<len(dialoguelist): 
                     print(dialoguelist[dialoguenumber])
