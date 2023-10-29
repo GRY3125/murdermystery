@@ -1,9 +1,4 @@
-# commands left to code:
-### use/u? 
-### get?
-# clues
 # set allevidencediscovered=1 when everything examined + suspects interrogated, print suspect command
-
 
 
 inventorylist=["apple", "autopsy report"]
@@ -196,10 +191,9 @@ while game==0:
         elif currentplace in [62]: 
             if item in ["flesh"]: 
                 print("Stripped pieces of meat rotting away, producing an abominable smell of the dead, attracting a swarm of hungry flies.")
-                if fleshdiscovered==0: 
+                if "speculation" not in inventorylist: 
                     print("\nIt must have been a dark night and chilly night, except darker than most and colder. The night held reign upon the world, watching - in its full, white roundness. The trees sway against the wind, imitating the living, feeding the eerie atmosphere. James Brown stood at the tip of the river, voice course from screaming, blood dripping down from the wounds he gained from the accident that just occurred. Looking into the abyssal woods with little to no light to support his vision, a silhouette of a person could be barely made out in the distance. Before he could comprehend the situation, he was pushed into the ravenous river. Being a farm boy all his life, no one had taught him to swim and so struggling to keep afloat, all he could do was to get carried away by the current. And down he went, until he was plunged into a wooden, circular structure, and left to be torn apart inescapably...")
                     print("\nSpeculation has been added to inventory.")
-                    fleshdiscovered=1
                     inventorylist.append("speculation")
             else: 
                 print("Object not found...")
@@ -218,6 +212,14 @@ while game==0:
                         inventorylist.append("call record")
                     else: 
                         print("You examine the telephone again, and then realise you already have the call logs in your inventory.")
+                if item=="paper": 
+                    if "paper" not in inventorylist: 
+                        print("Through careful inspection, you realise that one of the pages is a diary entry. It has been added into your inventory.")
+                        inventorylist.append("paper")
+                    else: 
+                        print("Blank pages.")
+            else: 
+                print("Object not found...")
                 
         elif currentplace in [84]: 
             if item in ["horses"]: 
@@ -392,6 +394,11 @@ while game==0:
                 print("Hubert: Oh God... I... I need to go back and check on this, Barbara.")
                 print("Barbara: Don't rush, Hubert. As you know, be careful not to get involved in this tragedy too.")
                 print("Hubert: We won't have to prepare one more dish for dinner anymore. Ha! We are finally free from looking after that naughty boy!")
+            elif itemmm=="paper":
+                print('\nDear dary,')
+                print("\nIm so so so sad today. I did what daddy wantid, even betterer! 3 whole miles of land under the supper supper hot sun. But, mommy an' daddy didnt gimme dinner 'gain… This is the 2nd day! Y? Im supper-duper hungry.")
+                print("They say Im not theyre real kid, and they got Luke now. They lov Luke more, I gess. It hurts, diary. I wish I cud have a hug, like they give theyre own kid.")
+                print("\nJames")
         else: 
             print("Object is not in inventory...")
             print(itemmm)
