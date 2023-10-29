@@ -1,5 +1,6 @@
-# set allevidencediscovered=1 when everything examined + suspects interrogated, print suspect command
-
+evidencechecked=[] 
+noofevidence=0
+suscmd=0
 
 inventorylist=["apple", "autopsy report"]
 currentplace=13 # xy = (x,y) coordinate
@@ -14,7 +15,7 @@ def CommandV():
         CommandSplit=CommandInput.split()
         if len(CommandInput)>0: 
             FirstCmd=CommandSplit[0]
-            if FirstCmd in ["look", "l", "examine", "x", "inventory", "inv", "i", "use", "u", "north", "n", "east", "e", "south", "s", "west", "w", "get", "help", "h", "interact", "t", "suspect"]: 
+            if FirstCmd in ["look", "l", "examine", "x", "inventory", "inv", "i", "use", "u", "north", "n", "east", "e", "south", "s", "west", "w", "help", "h", "interact", "t", "suspect"]: 
                 check=1
                 return CommandInput
             else: 
@@ -51,7 +52,7 @@ while game==0:
         xCoOrd=currentplace//10
         yCoOrd=currentplace%10
         print("Your current location is ("+str(xCoOrd)+", "+str(yCoOrd)+")...")
-        print("\n'north'/'n': go north \n'east'/'e': go east \n'south'/'s': go south \n'west'/'w': go west \n'look'/'l': look at your surroundings \n'examine'/'x': examine an object \n'inventory'/'inv'/'i': check your inventory \n'use'/'u': use an object \n'get': get an object \n'interact'/'t': interact with a character")
+        print("\n'north'/'n': go north \n'east'/'e': go east \n'south'/'s': go south \n'west'/'w': go west \n'look'/'l': look at your surroundings \n'examine'/'x': examine an object \n'inventory'/'inv'/'i': check your inventory \n'use'/'u': use an object \n'interact'/'t': interact with a character")
 
 
 
@@ -161,6 +162,8 @@ while game==0:
             if item in ["car"]: 
                 print("A Toyota AE86, nothing out of the ordinary, just the regular, four wheel drive, you could spot anywhere on the road.")
                 print("Right on the front hood of the car, there was a rather unusual smear of blood. It seemed improbable that it was Bobbylee's blood, but the presence of this mysterious stain left you wondering whether it had any link to the blood on the ground.")
+                if "xcar" not in evidencechecked: 
+                    evidencechecked.append("xcar")
             else: 
                 print("Object not found...")
                 
@@ -195,12 +198,16 @@ while game==0:
                     print("\nIt must have been a dark night and chilly night, except darker than most and colder. The night held reign upon the world, watching - in its full, white roundness. The trees sway against the wind, imitating the living, feeding the eerie atmosphere. James Brown stood at the tip of the river, voice course from screaming, blood dripping down from the wounds he gained from the accident that just occurred. Looking into the abyssal woods with little to no light to support his vision, a silhouette of a person could be barely made out in the distance. Before he could comprehend the situation, he was pushed into the ravenous river. Being a farm boy all his life, no one had taught him to swim and so struggling to keep afloat, all he could do was to get carried away by the current. And down he went, until he was plunged into a wooden, circular structure, and left to be torn apart inescapably...")
                     print("\nSpeculation has been added to inventory.")
                     inventorylist.append("speculation")
+                if "xflesh" not in evidencechecked: 
+                    evidencechecked.append("xflesh")
             else: 
                 print("Object not found...")
         
         elif currentplace in [71, 81]: 
             if item in ["pigs"]: 
                 print("Oink oink. OINK.")
+                if "xpigs" not in evidencechecked: 
+                    evidencechecked.append("xpigs") 
             else: 
                 print("Object not found...")
                 
@@ -212,12 +219,16 @@ while game==0:
                         inventorylist.append("call record")
                     else: 
                         print("You examine the telephone again, and then realise you already have the call logs in your inventory.")
+                    if "xtelephone" not in evidencechecked: 
+                        evidencechecked.append("xtelephone")
                 if item=="paper": 
                     if "paper" not in inventorylist: 
                         print("Through careful inspection, you realise that one of the pages is a diary entry. It has been added into your inventory.")
                         inventorylist.append("paper")
                     else: 
                         print("Blank pages.")
+                    if "xpaper" not in evidencechecked: 
+                        evidencechecked.append("xpaper")
             else: 
                 print("Object not found...")
                 
@@ -265,6 +276,8 @@ while game==0:
                     else: 
                         dialogueee=0
                         print("Dialogue ended.")
+                if "sbb" not in evidencechecked: 
+                    evidencechecked.append("sbb")
             else: 
                 print("Person not found...")
                 
@@ -294,6 +307,8 @@ while game==0:
                         else: 
                             dialogueee=0
                             print("Dialogue ended.")
+                    if "sw" not in evidencechecked: 
+                        evidencechecked.append("sw")
                 if person=="farmer":
                     print("After two hours of the police starting their investigation into the murder, Hubert finally arrived at the scene with a sense of happiness and enjoyment. As he took in the grim reality before him, shock and disbelief washed over his joy, making him speechless. His wrinkled face looked increasingly old.")
                     print("Press enter to continue the dialogue. \n")
@@ -315,6 +330,8 @@ while game==0:
                         else: 
                             dialogueee=0
                             print("Dialogue ended.")
+                    if "sf" not in evidencechecked: 
+                        evidencechecked.append("sf")
             else: 
                 print("Person not found...")
                 
@@ -342,6 +359,8 @@ while game==0:
                     else: 
                         dialogueee=0
                         print("Dialogue ended.")
+                if "ssb" not in evidencechecked: 
+                    evidencechecked.append("ssb")
             else: 
                 print("Person not found...")
                 
@@ -350,7 +369,8 @@ while game==0:
                 print("The little boy is curled up into a ball on the ground, his face burried in his body while he hugs his trembling legs.")
                 print(">>> I don't know what happened!! There was a loud shout at night. Mama said she should check what happened. I said no. I was scared to be alone. And mama said someone died this morning. I've been hiding here since. Don't tell mama.")
                 print("He gets up and scurries off, but your guts tell you that he will return to this spot as he has no where else to go.")
-                
+                if "sk" not in evidencechecked: 
+                    evidencechecked.append("sk")
         else: 
             print("No one to talk to here.")
             
@@ -419,6 +439,21 @@ while game==0:
         print("No suspect given.")
     elif commanddd in ["suspect"] and allevidencediscovered==0:
         print("You have to examine every single object and obtain every single piece of evidence before finalising a suspect. You should've known that, aren't you a detective?")
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    noofevidence=len(evidencechecked)
+    if noofevidence==10: 
+        allevidencediscovered=1
+        if suscmd==0: 
+            print("\n\n\n[ANNOUNCEMENT!!!] \nAll clues and evidence have been viewed at or collected. \nYou may now use the command 'suspect'.")
+            suscmd=1
         
         
 
