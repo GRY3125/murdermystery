@@ -337,14 +337,14 @@ while game==0:
                 
         elif currentplace in [84]: 
             if person in ["stableboy"]: 
-                print("Logan had just woken up after the police arrived. As they shared the sad news of James' death, Logan was stricken with a profound sense of disbelief as if the world had shifted beneath him. His eyes welled up as he grappled with the heavy reality of losing his dear friend. \nLogan walked straight to the innermost of the stable, where it stood an attractive house, which accompanied James through his life. In a quiet tone, Logan shared the tragic news with the house.")
+                print("Logan had just woken up after the police arrived. As they shared the sad news of James' death, Logan was stricken with a profound sense of disbelief as if the world had shifted beneath him. His eyes welled up as he grappled with the heavy reality of losing his dear friend. \nLogan walked straight to the innermost of the stable, where an attractive horse stood. He claimed that this was the horse who was James' favourite, and accompanied him throughout his life. In a quiet tone, Logan shared the tragic news with the horse.")
                 print("Press enter to continue the dialogue. \n")
                 dialogueyn=input()
                 if dialogueyn=="": 
                     dialogueee=1
                 dialoguenumber=0
                 dialoguelist=["What is your full name? \n>>> Logan Alexander", 
-                              "What is your occupation? \n>>> Stable boy", 
+                              "What is your occupation? \n>>> I work for the stable.", 
                               "Can you provide details about your activities yesterday? \n>>> Last night, I went to bed as usual after I visited my horses for the last time. \n>>> But later in the night, I suddenly woke up because I was thirsty, so I went to collect some fresh water along the river. But the water tasted a little abnormal, as if there was a pinch of iron?", 
                               "When do you go to bed? \n>>> Around 9:00 pm", 
                               "When do you go to collect the water? \n>>> I didn't check the clock, but it's probably about 10-11pm because the stars were not visible.", 
@@ -397,9 +397,9 @@ while game==0:
                 print(BoldText("Name: ")+"James Brown")
                 print(BoldText("Case Number: ")+"[198308031]")
                 print(BoldText("Date of Autopsy: ")+"[1983.08.03]")
-                print(BoldText("Identification: ")+"\nClothing - black shirts")
+                print(BoldText("Identification: ")+"\nClothing - black shirt, jeans")
                 print(BoldText("Time of Death: ")+"\nAround 10pm, 1983.08.02")
-                print(BoldText("Cause of Death: ")+"\n1. Immediate Cause: excessive loss of blood \n2. Underlying Causes: cerebral concussion, fracture, organ failure \n3. Manner of Death: [Undetermined]")
+                print(BoldText("Cause of Death: ")+"\n1. Immediate Cause: excessive loss of blood and concussion \n2. Underlying Causes: cerebral concussion, fracture, organ failure \n3. Manner of Death: [Undetermined]")
             elif itemmm=="call record": 
                 print("\n"+BoldText("TELEPHONE CALL RECORD"))
                 print(BoldText("Date: ")+"[1983.08.03]")
@@ -416,8 +416,8 @@ while game==0:
                 print("Hubert: We won't have to prepare one more dish for dinner anymore. Ha! We are finally free from looking after that naughty boy!")
             elif itemmm=="paper":
                 print('\nDear dary,')
-                print("\nIm so so so sad today. I did what daddy wantid, even betterer! 3 whole miles of land under the supper supper hot sun. But, mommy an' daddy didnt gimme dinner 'gain… This is the 2nd day! Y? Im supper-duper hungry.")
-                print("They say Im not theyre real kid, and they got Luke now. They lov Luke more, I gess. It hurts, diary. I wish I cud have a hug, like they give theyre own kid.")
+                print("\nIm so sO so sad today. I did what daddy wantid, even betterer! 3 'ole miles of land under the supper supper hot sun. But, mommy an' daddy di-en' gimme dinner 'gain… This es the sec'nd day ! Y???!!! Im supper-duper hungry.")
+                print("They say Im not theyre real kid, and they got Luke now. They lov Luke more, I gess. It hurts, dary. I wish I cud have a hug, like they give theyre own kid.")
                 print("\nJames")
         else: 
             print("Object is not in inventory...")
