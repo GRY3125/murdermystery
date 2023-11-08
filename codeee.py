@@ -258,6 +258,8 @@ while game==0:
                 dialogueyn=input()
                 if dialogueyn=="": 
                     dialogueee=1
+                else: 
+                    dialogueee=0
                 dialoguenumber=0
                 dialoguelist=["What is your full name? \n>>> Bobbylee Jones", 
                               "What is your occupation? \n>>> College student", 
@@ -289,6 +291,8 @@ while game==0:
                     dialogueyn=input()
                     if dialogueyn=="": 
                         dialogueee=1
+                    else: 
+                        dialogueee=0
                     dialoguenumber=0
                     dialoguelist=["What is your full name? \n>>> Bar...bara Will...liam Bene...dict", 
                                   "What is your occupation? \n>>> I'm the... wife of the farmer... who owns this land...", 
@@ -315,6 +319,8 @@ while game==0:
                     dialogueyn=input()
                     if dialogueyn=="": 
                         dialogueee=1
+                    else: 
+                        dialogueee=0
                     dialoguenumber=0
                     dialoguelist=["What is your full name? \n>>> Hubert James Benedict", 
                                   "What is your occupation? \n>>> Farmer, the owner of this farmland", 
@@ -342,6 +348,8 @@ while game==0:
                 dialogueyn=input()
                 if dialogueyn=="": 
                     dialogueee=1
+                else: 
+                    dialogueee=0
                 dialoguenumber=0
                 dialoguelist=["What is your full name? \n>>> Logan Alexander", 
                               "What is your occupation? \n>>> I work for the stable.", 
