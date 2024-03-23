@@ -20,9 +20,13 @@ input {
     background-color: #1d2126;
 }
 
+input[type="text"] {
+    caret-color: #c9cccd;
+}
+
 input, textarea {
     color: #c9cccd;
-    caret-color: #c9cccd;
+    
 }
 
 .alignc {
