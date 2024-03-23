@@ -18,7 +18,11 @@ input {
     border: 0px;
     width: 100%;
     background-color: #1d2126;
+}
+
+input, textarea {
     color: #c9cccd;
+    caret-color: #c9cccd;
 }
 
 .alignc {
