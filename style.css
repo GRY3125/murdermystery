@@ -10,7 +10,9 @@ body {
     overflow: scroll;
 }
 
-form 
+form {
+    color: #c9cccd;
+}
 
 input {
     border: 0px;
