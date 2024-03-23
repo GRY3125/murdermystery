@@ -1,7 +1,7 @@
 html {
     height: 100%;
     width: 100%;
-    background-color: darkgrey;
+    background-color: #1d2126;
 }
 
 body {
@@ -12,4 +12,5 @@ body {
 input {
     border: 0px;
     width: 100%;
+    background-color: #1d2126;
 }
