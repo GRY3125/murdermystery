@@ -8,6 +8,7 @@ body {
     overflow: scroll;
     justify-content: center;
     margin: 0px;
+    margin-bottom: 10px;
     padding: 0px;
     font-family: Palatino, Georgia, serif;
 }
