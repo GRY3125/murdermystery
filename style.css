@@ -5,9 +5,10 @@ html {
 }
 
 body {
-    width: 640px;
-
     overflow: scroll;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
 }
 
 form {
@@ -30,6 +31,7 @@ input, textarea {
 }
 
 .alignc {
+    width: 40%;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0%);
