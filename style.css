@@ -9,6 +9,7 @@ body {
     justify-content: center;
     margin: 0px;
     padding: 0px;
+    font-family: Palatino, Georgia, serif;
 }
 
 form {
@@ -33,6 +34,7 @@ input, textarea {
 .alignc {
     width: 40%;
     position: absolute;
+    top: 100%;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -50%);
   }
