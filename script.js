@@ -8,3 +8,6 @@ var currentplace=13
 var fleshdiscovered=0
 var allevidencediscovered=0 
 
+if (cmdd="look"){
+    alert("ues")
+}

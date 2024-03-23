@@ -2,16 +2,25 @@ html {
     height: 100%;
     width: 100%;
     background-color: #1d2126;
-    color: #c9cccd;
 }
 
 body {
-    margin-left: 30%;
-    margin-right: 30%;
+    width: 640px;
+
+    overflow: scroll;
 }
+
+form 
 
 input {
     border: 0px;
     width: 100%;
     background-color: #1d2126;
+    color: #c9cccd;
 }
+
+.alignc {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
