@@ -1,42 +1,44 @@
-html,
-body {
+html {
     height: 100%;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Palatino, Georgia, serif;
-    color: #c9cccd;
     background-color: #1d2126;
 }
 
 body {
     overflow: scroll;
     justify-content: center;
+    margin: 0px;
     margin-bottom: 20px;
-    padding-bottom: 20px;
+    padding: 0px;
+    font-family: Palatino, Georgia, serif;
 }
 
 form {
-    color: inherit; 
+    color: #c9cccd;
 }
 
-input[type="text"],
-input,
-textarea {
-    border: 0;
+input {
+    border: 0px;
     width: 100%;
     background-color: #1d2126;
+}
+
+input[type="text"] {
     caret-color: #c9cccd;
-    color: inherit; 
+}
+
+input, textarea {
+    color: #c9cccd;
+    
 }
 
 .alignc {
     width: 40%;
     position: absolute;
-    top: 50%;
+    top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+  }
 
 input:focus,
 select:focus,
